@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all articles and blog posts from TechInsights Blog on technology, digital marketing, and more">
+    <title>All Posts | TechInsights Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for all posts page */
+        .posts-page {
+            padding: 60px 0;
+        }
+        
+        .posts-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .posts-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .posts-header p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .filter-categories {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .filter-categories ul {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .filter-categories li {
+            margin: 5px;
+        }
+        
+        .filter-categories a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            border-radius: 20px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .filter-categories a:hover,
+        .filter-categories a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .search-posts {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            display: flex;
+        }
+        
+        .search-posts input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px 0 0 4px;
+            font-family: var(--font-primary);
+            font-size: 16px;
+        }
+        
+        .search-posts input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .search-posts button {
+            border-radius: 0 4px 4px 0;
+            padding: 0 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-posts button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .posts-grid {
+            margin-bottom: 40px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 50px;
+        }
+        
+        .pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .pagination a:hover,
+        .pagination a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .posts-header h1 {
+                font-size: 30px;
+            }
+            
+            .search-posts {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>TechInsights</h1>
+                <p>Exploring the Digital Frontier</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html" class="active">All Posts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h2>Blog Posts</h2>
+                <p>Explore our collection of articles on technology, digital marketing, and online business</p>
+            </div>
+        </section>
+
+        <section class="posts-page">
+            <div class="container">
+                <div class="posts-header">
+                    <h1>All Articles</h1>
+                    <p>Browse through our latest insights, guides, and industry updates</p>
+                </div>
+
+                <div class="filter-categories">
+                    <ul>
+                        <li><a href="#" class="active">All</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Blogging</a></li>
+                        <li><a href="#">Social Media</a></li>
+                    </ul>
+                </div>
+
+                <form class="search-posts">
+                    <input type="text" placeholder="Search articles...">
+                    <button type="submit" aria-label="Search articles"><i class="fas fa-search"></i></button>
+                </form>
+
+                <div class="posts-grid">
+                    <!-- Featured Post 1 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Raushan_Dubey_Ji_How_to_Start_Your_Own_Blog_in_2025_c5361f30-2e1c-43e2-8c81-c9445029f438.png" alt="How to Start Your Own Blog in 2025">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Blogging</div>
+                            <h3 class="post-title"><a href="posts/how-to-start-your-own-blog-in-2025.html">How to Start Your Own Blog in 2025</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">June 15, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Starting a blog in 2025 requires the right approach and tools. Learn the essential steps to create a successful blog that stands out in today's competitive digital landscape.
+                            </p>
+                            <a href="posts/how-to-start-your-own-blog-in-2025.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Featured Post 2 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Raushan_Dubey_Ji_10_Tips_for_Digital_Marketing_Success_9d5a53a2-8e34-411f-89c8-447a1e0fc9f1.png" alt="10 Tips for Digital Marketing Success">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Marketing</div>
+                            <h3 class="post-title"><a href="posts/10-tips-for-digital-marketing-success.html">10 Tips for Digital Marketing Success</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">June 10, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Digital marketing continues to evolve. Discover the top 10 strategies that can help your business thrive in the digital space and reach your target audience effectively.
+                            </p>
+                            <a href="posts/10-tips-for-digital-marketing-success.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Featured Post 3 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Raushan_Dubey_Ji_The_Future_of_AI_in_Content_Creation_e5dfd23d-aacc-4b32-826c-4fcf8cc3cab4.png" alt="The Future of AI in Content Creation">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Technology</div>
+                            <h3 class="post-title"><a href="posts/the-future-of-ai-in-content-creation.html">The Future of AI in Content Creation</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">June 5, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Artificial Intelligence is transforming how we create and consume content. Explore how AI tools are shaping the future of content creation and what it means for content creators.
+                            </p>
+                            <a href="posts/the-future-of-ai-in-content-creation.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Recent Post 1 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Untitled design (1).png" alt="Essential SEO Strategies for 2025">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">SEO</div>
+                            <h3 class="post-title"><a href="posts/essential-seo-strategies-for-2025.html">Essential SEO Strategies for 2025</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">May 28, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                SEO continues to be vital for online visibility. Discover the most effective SEO techniques that will help your website rank higher in search engine results in 2025.
+                            </p>
+                            <a href="posts/essential-seo-strategies-for-2025.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Recent Post 2 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Untitled design (2).png" alt="Building an Engaged Social Media Community">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Social Media</div>
+                            <h3 class="post-title"><a href="posts/building-an-engaged-social-media-community.html">Building an Engaged Social Media Community</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">May 22, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Learn proven strategies to create and nurture an active social media community that engages with your content and helps spread your message organically.
+                            </p>
+                            <a href="posts/building-an-engaged-social-media-community.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Additional Posts -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="6.png" alt="Creating a Content Strategy That Converts">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Content Marketing</div>
+                            <h3 class="post-title"><a href="#">Creating a Content Strategy That Converts</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">May 15, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Content is king, but without a strategy, it can fall flat. Learn how to develop a content strategy that attracts, engages, and converts your target audience.
+                            </p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="7.png" alt="The Rise of Voice Search and How to Optimize for It">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">SEO</div>
+                            <h3 class="post-title"><a href="#">The Rise of Voice Search and How to Optimize for It</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">May 8, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Voice search is becoming increasingly popular. Discover how to adapt your SEO strategy to ensure your content ranks well for voice queries in this new landscape.
+                            </p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Untitled design (3).png" alt="Data Privacy in the Digital Age: What Businesses Need to Know">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Technology</div>
+                            <h3 class="post-title"><a href="#">Data Privacy in the Digital Age: What Businesses Need to Know</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">May 1, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                With increasing regulations and consumer awareness, data privacy has become critical. Learn what your business needs to do to remain compliant and build trust.
+                            </p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="Untitled design (4).png" alt="Remote Work Best Practices for Distributed Teams">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-category">Business</div>
+                            <h3 class="post-title"><a href="#">Remote Work Best Practices for Distributed Teams</a></h3>
+                            <div class="post-meta">
+                                <span class="post-date">April 25, 2025</span>
+                                <span class="post-author">By Admin</span>
+                            </div>
+                            <p class="post-excerpt">
+                                Managing remote teams presents unique challenges. Discover the most effective strategies for keeping distributed teams productive, connected, and engaged.
+                            </p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest blog posts and updates delivered directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About TechInsights</h3>
+                    <p>TechInsights is a blog dedicated to sharing valuable insights on technology, digital marketing, and online business strategies.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="posts.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="category-technology.html">Technology</a></li>
+                        <li><a href="category-marketing.html">Marketing</a></li>
+                        <li><a href="category-seo.html">SEO</a></li>
+                        <li><a href="category-blogging.html">Blogging</a></li>
+                        <li><a href="category-social-media.html">Social Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechInsights Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterLinks = document.querySelectorAll('.filter-categories a');
+            
+            filterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    filterLinks.forEach(item => item.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // In a real application, you would filter the posts here
+                    // For now, we'll just show a message
+                    console.log(`Filter by: ${this.textContent}`);
+                });
+            });
+            
+            // Search form functionality
+            const searchForm = document.querySelector('.search-posts');
+            
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const searchQuery = this.querySelector('input').value.trim();
+                    
+                    if (searchQuery) {
+                        // In a real application, you would search posts here
+                        console.log(`Search for: ${searchQuery}`);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
